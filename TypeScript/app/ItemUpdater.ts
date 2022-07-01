@@ -9,7 +9,8 @@ export function update(item: Item) {
         item.quality = item.quality - 1;
       }
     }
-  } else {
+  }
+  else {
     if (item.quality < 50) {
       item.quality = item.quality + 1;
       if (item.name == ItemName.Backstage) {
@@ -39,14 +40,14 @@ export function update(item: Item) {
             item.quality = item.quality - 1;
           }
         }
-      } else {
+      }
+      else {
         item.quality = item.quality - item.quality;
       }
-    } else {
-      if (item.quality < 50) {
+    }
+    else       if (item.quality < 50) {
         item.quality = item.quality + 1;
       }
-    }
   }
-   return item;
+  return item;
 }
