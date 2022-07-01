@@ -1,3 +1,4 @@
+import { ItemUpdater } from "@/ItemUpdater";
 import { Item, GildedRose } from "../app/gilded-rose";
 
 const items = [
@@ -13,7 +14,7 @@ const items = [
   new Item("Conjured Mana Cake", 3, 6),
 ];
 
-const gildedRose = new GildedRose(items);
+// const gildedRose = new GildedRose(items);
 
 let days: number = 2;
 if (process.argv.length > 2) {
@@ -24,8 +25,10 @@ for (let i = 0; i < days; i++) {
   console.log("-------- day " + i + " --------");
   console.log("name, sellIn, quality");
   items.forEach((element) => {
+    ItemUpdater.update(element);
     console.log(element.name + " " + element.sellIn + " " + element.quality);
   });
   console.log();
-  gildedRose.updateQuality();
+  // gildedRose.updateQuality();
+
 }
