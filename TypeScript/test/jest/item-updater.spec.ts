@@ -13,12 +13,19 @@ describe("update", () => {
     });
 
     it("should reduce sellin by 2 if its value is negative", () => {
-      const item = update(new Item("BattleAxe", -1, 0));;
-
+      const item = update(new Item("BattleAxe", -1, 0));
       expect(item).toEqual({
         name: "BattleAxe",
         sellIn: -2,
         quality: 0,
+      });
+    });
+    it("should reduce sellin value if value is positive", () => {
+      const item = update(new Item("BattleAxe", 3, 2));
+      expect(item).toEqual({
+        name: "BattleAxe",
+        sellIn: 2,
+        quality: 1,
       });
     });
   });
