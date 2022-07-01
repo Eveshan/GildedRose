@@ -45,9 +45,9 @@ export function update(item: Item) {
         item.quality = item.quality - item.quality;
       }
     }
-    else       if (item.quality < 50) {
-        item.quality = item.quality + 1;
-      }
+    else if (item.quality < 50) {
+      item.quality = item.quality + 1;
+    }
   }
   return item;
 }
